@@ -39,8 +39,7 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|group_name|string|null: false|
-|member|string|null: false|
+|name|string|null: false|
 ### Association
 - has_many :users, through: groups_users
 - has_many :groups_users
@@ -50,13 +49,13 @@ Things you may want to cover:
 ## messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|text|text|null: false|
+|text|text||
 |image|text||
 |user_id|integer|null: false, foreign_key: true|
-|groups_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
-- belongs_to :chat
+- belongs_to :group
 
 ## groups_usersテーブル
 
