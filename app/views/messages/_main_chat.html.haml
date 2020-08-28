@@ -1,0 +1,25 @@
+.Main_bar
+  .Main_bar__group
+    .Main_bar__group_name
+      test
+      .Main_bar__group_member
+        Member : masa
+    .Main_bar__group_edit-btn
+      = link_to "#", class: "Edit__btn" do
+        Edit
+  .Message
+    .Message__member
+      .Message__member_username
+        masa
+      .Message__member_date
+        2019/11/20(Wed) 17:43:01
+    .Message__member_content
+      おはよう！
+  .form
+    %form.new_message
+      .input-form
+        %input{type: "text", placeholder: "type a message", class: "input-form__text"}
+        %label{class: "input-form__image"}
+          = icon('far', 'image', class: "icon__image")
+          %input{type: "file", class: "input-form__image__file"}
+      %input{type: "submit", value: "Send", class: "submit-btn"}
