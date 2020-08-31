@@ -1,15 +1,20 @@
 .Side_bar
   .Side_bar__user_name
     .Top-items
-      .Top-items__name
-        %p masa
-      .Top-items__icons
-        = icon('far', 'edit', class:"Top-items--edit")
-        = icon('fas', 'cog', class:"Top-items--cog")
+      %h3.Top-items__name
+        = current_user.name
+      %ul.Top-items__icons
+        %li.Top-items__icon
+          =link_to '#' do
+            = icon('far', 'edit', class:"Top-items--edit")
+        %li.Top-items__icon
+          = link_to edit_user_path(current_user) do
+            = icon('fas', 'cog', class:"Top-items--cog")
 
   .Side_bar__group-list
     .Group
-      .Group__name
-        techcamp
-      .Group__message
-        まだメッセージがありません
+      = link_to '#' do
+        .Group__name
+          techcamp
+        .Group__message
+          まだメッセージがありません
