@@ -1,25 +1,22 @@
 .Main_bar
   .Main_bar__group
     .Main_bar__group_name
-      test
+      = @group.name
       .Main_bar__group_member
-        Member : masa
+        Member :
+        - @group.users.each do |user|
+          = user.name
     .Main_bar__group_edit-btn
-      = link_to "#", class: "Edit__btn" do
+      = link_to edit_group_path(@group.id), class: '_edit-btn' do
         Edit
   .Message
-    .Message__member
-      .Message__member_username
-        masa
-      .Message__member_date
-        2019/11/20(Wed) 17:43:01
-    .Message__member_content
-      おはよう！
+    = render partial: 'message', collection: @messages
+      
   .form
-    %form.new_message
+    = form_with model: [@group, @message], html: {class:"Form"}, local: true do |f|
       .input-form
-        %input{type: "text", placeholder: "type a message", class: "input-form__text"}
-        %label{class: "input-form__image"}
+        = f.text_field :content, class: 'input-form__text', placeholder: 'type a message'
+        = f.label :image, class: 'input-form__image' do
           = icon('far', 'image', class: "icon__image")
-          %input{type: "file", class: "input-form__image__file"}
-      %input{type: "submit", value: "Send", class: "submit-btn"}
+          = f.file_field :image, class: 'input-form__image__file'
+      = f.submit 'Send', class: 'submit-btn'
