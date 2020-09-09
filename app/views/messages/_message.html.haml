@@ -1,10 +1,11 @@
-.Message__member
-  .Message__member_username
-    = message.user.name
-  .Message__member_date
-    = message.created_at.strftime("%Y年%m月%d日 %H時%M分")
-.Message__member_content
-  - if message.content.present?
-    %p.Message__content
-      = message.content
-  = image_tag message.image.url, class: 'Message__member_content__image' if message.image.present?
+.MessageBox{ data: {message: {id: message.id}}}
+  .Message__member
+    .Message__member_username
+      = message.user.name
+    .Message__member_date
+      = message.created_at.strftime("%Y年%m月%d日 %H時%M分")
+  .Message__member_content
+    - if message.content.present?
+      %p.Message__content
+        = message.content
+    = image_tag message.image.url, class: 'Message__member_content__image' if message.image.present?
