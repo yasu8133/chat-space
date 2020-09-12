@@ -39,29 +39,7 @@ $(function(){
       return html;
     };
   }
-  $('.Form').on('submit', function(e){
-    e.preventDefault()
-    let formData = new FormData(this);
-    let url = $(this).attr('action')
-    $.ajax({
-      url: url,
-      type: "POST",
-      data: formData,
-      dataType: 'json',
-      processData: false,
-      contentType: false
-    })
-    .done(function(data){
-      let html = buildHTML(data);
-      $('.Message').append(html);
-      $('form')[0].reset();
-      $('.Message').animate({ scrollTop: $('.Message')[0].scrollHeight});
-      $('.submit-btn').prop('disabled', false);
-    })
-    .fail(function() {
-      alert("メッセージ送信に失敗しました");
-    });
-  });
+
   let reloadMessages = function() {
     //カスタムデータ属性を利用し、ブラウザに表示されている最新メッセージのidを取得
     let last_message_id = $('.MessageBox:last').data("message-id") || 0;
