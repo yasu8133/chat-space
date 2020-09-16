@@ -373,7 +373,7 @@ DEPENDENCIES
   turbolinks (~> 5)
   tzinfo-data
   unicorn (= 5.4.1)
-  web-console (~> 2.0)
+  web-console
   webdrivers
   webpacker (~> 4.0)
 
