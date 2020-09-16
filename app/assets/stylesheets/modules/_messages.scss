@@ -2,6 +2,10 @@
   box-sizing: border-box;
 }
 
+a{
+  text-decoration: none;
+}
+
 .wrapper {
   display: flex;
 }
@@ -28,10 +32,12 @@
   padding: 20px 20px 40px 20px;
   &__name {
     font-size: 15px;
+    color:#fff;
   }
   &__message {
     font-size: 11px;
     margin-top: 5px;
+    color:#fff;
   }
 
 }
@@ -52,8 +58,12 @@
       color: #fff;
     }
   }
+  &--edit{
+    color:#fff;
+  }
   &--cog {
     margin-left: 5px;
+    color:#fff;
   }
 }
 
@@ -90,6 +100,9 @@
       border: 1px solid #38aef0;
     }
   }
+  .edit-btn{
+    color:#38aef0;
+  }
   
   .Message {
     background-color: #fafafa;
@@ -111,6 +124,7 @@
     &_content {
       font-size: 14px;
       color: #434A54;
+      margin-bottom:46px;
     }
     }
   }

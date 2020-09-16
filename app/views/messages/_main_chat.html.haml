@@ -7,7 +7,7 @@
         - @group.users.each do |user|
           = user.name
     .Main_bar__group_edit-btn
-      = link_to edit_group_path(@group.id), class: '_edit-btn' do
+      = link_to edit_group_path(@group.id), class: 'edit-btn' do
         Edit
   .Message
     = render partial: 'message', collection: @messages
